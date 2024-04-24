@@ -21,9 +21,7 @@ export default function RootLayout({ children }) {
 
           <main className="app">
             <Navbar />
-            <Suspense fallback={<Loading />} >
               {children}
-            </Suspense>
           </main>
         </Provider>
       </body>
