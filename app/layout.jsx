@@ -1,6 +1,8 @@
 import Navbar from "@components/Navbar";
 import Provider from "@components/Provider";
 import "@styles/globals.css";
+import { Suspense } from "react";
+import Loading from "./profile/loading";
 
 
 export const metadata = {
@@ -19,7 +21,9 @@ export default function RootLayout({ children }) {
 
           <main className="app">
             <Navbar />
-            {children}
+            <Suspense fallback={<Loading />} >
+              {children}
+            </Suspense>
           </main>
         </Provider>
       </body>
